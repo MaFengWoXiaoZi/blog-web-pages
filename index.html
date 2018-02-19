@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" http-equiv="Content-Type" content="text/html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maxmum-scale=1, minmum-scale=1, user-scalable=no">
+	<title>小耗子先森的站点</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+ </style>
+</head>
+<body>
+	<h1>欢迎光临小耗子先森的站点</h1>
+	<div>
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="#">首页</a>
+			</li>
+			<li>
+				<a href="#">小程序</a>
+			</li>
+			<li>
+				<a href="#">照片墙</a>
+			</li>
+			<li>
+				<a href="#">留言板</a>
+			</li>
+			<li>
+				<a href="#">关于我</a>
+			</li>
+			<li class="pull-right">
+				<a href="#" data-toggle="modal" data-target="#user-login">登录</a>
+			</li>
+			<li class="pull-right">
+				<a href="#" data-toggle="modal" data-target="#user-register">注册</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="modal fade" id="user-login">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">
+						<span>&times;</span>
+						<span class="sr-only">关闭弹窗</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">用户登录</h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input type="input" class="form-control" id="username" name="username" placeholder="输入用户名或邮箱地址" />
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+						</div>
+						<br />
+						<div>
+							<input type="checkbox" name="" />
+							<span>请记住我</span>
+							<div class="pull-right"><a href="#">忘记密码</a></div>
+						</div>
+						<br />
+						<div class="pull-right">
+							<button class="btn btn-primary">登录</button>
+							&nbsp;
+							<button class="btn btn-default">取消</button>
+						</div>
+					</form>
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="user-register">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">
+						<span>&times;</span>
+						<span class="sr-only">关闭弹窗</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">用户注册</h4>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input type="input" class="form-control" id="username" name="username" placeholder="输入用户名或邮箱地址" />
+						</div>
+						<br />
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+						</div>
+						<br />
+						<div class="input-group" style="width: 100%">
+							<input type="input" class="form-control" id="check-code-2" placeholder="验证码" style="width: 50%;" />
+							<input type = "button" class="btn btn-primary btn-self pull-right" id="code-2" style="width: 45%; height: 35px;" />
+						</div>
+						<br />
+						<div class="pull-right">
+							<button class="btn btn-primary">注册</button>
+							&nbsp;
+							<button class="btn btn-default">取消</button>
+						</div>
+					</form>
+					<br />
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// 验证码函数
+		function changeCheckCodes(id) {
+			var alphaArrays = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+			var codes = "";
+			for (var i = 0; i < 4; i++) {
+				var r = window.parseInt(Math.random() * alphaArrays.length);
+				codes += alphaArrays[r];
+			}
+			$(id).val(codes);
+		}
+		$(document).ready(function(){
+			changeCheckCodes("#code-1");
+			changeCheckCodes("#code-2");
+		});
+		$("#code-1").click(function(){
+			changeCheckCodes("#code-1");
+		});
+		$("#code-2").click(function(){
+			changeCheckCodes("#code-2");
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#code-1, #code-2 {
+	color: blue;
+	font-size: 22px;
+	font-style: italic;
+	font-family: Arials;
+	font-weight: bold;
+	letter-spacing: 5px;
+	background: #EEE;
+}
+
+.btn-self {
+	border: 0;
+}
