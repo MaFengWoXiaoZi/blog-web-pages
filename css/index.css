@@ -1,4 +1,7 @@
-#code-1, #code-2 {
+img {
+	display: block;
+}
+#code {
 	color: blue;
 	font-size: 22px;
 	font-style: italic;

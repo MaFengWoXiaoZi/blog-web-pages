@@ -12,6 +12,7 @@
  </style>
 </head>
 <body>
+	<img src="image/header/countryside-03.jpg"  alt="乡村风光" class="img-responsive center-block" id="header-pic"/>
 	<h1>欢迎光临小耗子先森的站点</h1>
 	<div>
 		<ul class="nav nav-tabs">
@@ -107,8 +108,8 @@
 						</div>
 						<br />
 						<div class="input-group" style="width: 100%">
-							<input type="input" class="form-control" id="check-code-2" placeholder="验证码" style="width: 50%;" />
-							<input type = "button" class="btn btn-primary btn-self pull-right" id="code-2" style="width: 45%; height: 35px;" />
+							<input type="input" class="form-control" id="check-code" placeholder="验证码" style="width: 50%;" />
+							<input type = "button" class="btn btn-primary btn-self pull-right" id="code" style="width: 45%; height: 35px;" />
 						</div>
 						<br />
 						<div class="pull-right">
@@ -124,6 +125,41 @@
 		</div>
 	</div>
 
+	<div id="myCarousel" class="carousel slide" class="center-block">
+	<!-- 轮播（Carousel）指标 -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
+	</ol>   
+	<!-- 轮播（Carousel）项目 -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="image/carousel-pic/01.jpg" alt="First slide">
+		</div>
+		<div class="item">
+			<img src="image/carousel-pic/02.jpg" alt="Second slide">
+		</div>
+		<div class="item">
+			<img src="image/carousel-pic/03.jpg" alt="Third slide" width="80%" height="200px">
+		</div>
+		<div class="item">
+			<img src="image/carousel-pic/04.jpg" alt="Four slide">
+		</div>
+		<div class="item">
+			<img src="image/carousel-pic/05.jpg" alt="Five slide">
+		</div>
+	</div>
+	<!-- 轮播（Carousel）导航 -->
+	<a class="carousel-control left" href="#myCarousel" 
+	   data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#myCarousel" 
+	   data-slide="next">&rsaquo;</a>
+</div> 
+<br />
+
 	<script type="text/javascript">
 		// 验证码函数
 		function changeCheckCodes(id) {
@@ -136,14 +172,10 @@
 			$(id).val(codes);
 		}
 		$(document).ready(function(){
-			changeCheckCodes("#code-1");
-			changeCheckCodes("#code-2");
+			changeCheckCodes("#code");
 		});
-		$("#code-1").click(function(){
-			changeCheckCodes("#code-1");
-		});
-		$("#code-2").click(function(){
-			changeCheckCodes("#code-2");
+		$("#code").click(function(){
+			changeCheckCodes("#code");
 		});
 	</script>
 </body>
