@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>example</title>
+    <style type="text/css">
+    #demo {
+        position: relative;
+        width: 820px;
+        height: 550px;
+        overflow: hidden;
+    }
+
+    #demoimg {
+        position: absolute;
+        padding: 0; /*pading和margin的属性很重要, 否则图片边缘会有空隙*/
+        margin: 0;
+        width: 4100px;
+        height: 550px;
+        left: 0;
+    }
+
+    li {
+        list-style: none;
+        padding: 0;
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <ul id="demoimg">
+            <li>
+                <img src="image/carousel-pic/01.jpg" />
+            </li>
+            <li>
+                <img src="image/carousel-pic/02.jpg" />
+            </li>
+            <li>
+                <img src="image/carousel-pic/03.jpg" />
+            </li>
+            <li>
+                <img src="image/carousel-pic/04.jpg" />
+            </li>
+            <li>
+                <img src="image/carousel-pic/05.jpg" />
+            </li>
+        </ul>
+    </div>
+    
+    <script type="text/javascript">
+    // 幻灯片效果实现, 假设有n张图片, 则需要切换n-1次, 并且每次将整个图片合集的最左边向左移动单位图片的宽度, 以此来切换到下一张图片
+    // 在n-1次切换完毕后, 然后将图片合集的最左侧位置再次设置为0
+    // if判断语句通过判断每一次的图片合集最左侧的位置是否已经达到单张图片的宽度乘以总图片张数减去1
+    //初始化从0开始, 因此本程序是依次0, 1, 2, 3， 选择语句执行结束对应1, 2, 3, 4, 在第5次正好再次返回第一张图片
+    function sliderOneTime(){
+        var demoimg = document.getElementById("demoimg");
+        var imgList = demoimg.getElementsByTagName("li");
+        var imgsLeft = demoimg.offsetLeft;
+        var imgWidth = imgList[0].offsetWidth;
+        var imgsLength = imgList.length;
+
+        if (imgsLeft > -imgWidth * (imgsLength - 1)) {
+            // console.log(imgsLeft);
+            imgsLeft -= imgWidth;
+            demoimg.style.left = imgsLeft + "px";
+        }  else {
+            imgsLeft = 0;
+            demoimg.style.left = "0px";
+        }
+        // console.log(imgsLeft);
+    }
+    setInterval(sliderOneTime, 1000);
+    </script>
+</body>
+</html>
