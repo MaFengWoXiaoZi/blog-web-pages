@@ -1,6 +1,36 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+
+#nav-self {
+	background-color: #20232c;
+}
+
+#nav-self li{
+	color: white;
+}
+
+#nav-self a{
+	text-align: center;
+	border: 0;
+	color: white;
+}
+
+#nav-self a:hover{
+	color: black;
+	background: #20232c;
+}
+
+#nav-self a:visited{
+	background: #20232c;
+	background-color: #20232c;
+}
+
 img {
 	display: block;
 }
+
 #code {
 	color: blue;
 	font-size: 22px;
